@@ -25,3 +25,12 @@
 
 **Si la clave es incorrecta lanza la excepcion**
 ![](https://github.com/DavidPZ666/LABIETI3/blob/master/img/login2.jpg)
+
+
+## Part III
+
+**Hacemos login con un usuario con el rol de USER**
+![](https://github.com/DavidPZ666/LABIETI3/blob/master/img/partIII1.jpg)
+
+**Posteriormente con el token podemos ingresar a los endpoints**
+![](https://github.com/DavidPZ666/LABIETI3/blob/master/img/partIII2.jpg)
