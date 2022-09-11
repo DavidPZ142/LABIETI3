@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceMongoDB   implements UserService{
@@ -20,7 +21,8 @@ public class UserServiceMongoDB   implements UserService{
     }
 
     @Override
-    public User create(User user) throws UserException {
+    public User create(UserDto userDto) throws UserException {
+        User user = new User(userDto);
         return userRepository.save(user);
     }
 
@@ -61,7 +63,7 @@ public class UserServiceMongoDB   implements UserService{
     }
 
     @Override
-    public List<UserDto> convert(List<User> users) {
-        return null;
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }

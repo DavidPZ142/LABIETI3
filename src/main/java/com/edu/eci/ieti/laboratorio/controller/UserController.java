@@ -26,10 +26,10 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<UserDto> create( @RequestBody UserDto userDto ) {
-        ModelMapper modelMapper = new ModelMapper();
+
         try{
-            User user = modelMapper.map(userDto,User.class);
-            userService.create(user);
+
+            userService.create(userDto);
             return new ResponseEntity<>(userDto, HttpStatus.CREATED);
         } catch (UserException e) {
             throw new RuntimeException(e);
