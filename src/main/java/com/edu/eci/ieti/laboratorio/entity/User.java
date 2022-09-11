@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -36,6 +37,8 @@ public class User {
         this.lastname = userDto.getLastname();
         this.createdAt = LocalDate.now();
         this.passwordHash = BCrypt.hashpw(userDto.getPassword(), BCrypt.gensalt());
+        roles = new ArrayList<>();
+        roles.add(RoleEnum.USER);
     }
 
 

@@ -62,7 +62,7 @@ public class AuthController {
     private TokenDTO generateTokenDto( User user )
     {
         Calendar expirationDate = Calendar.getInstance();
-        expirationDate.add( Calendar.MINUTE, TOKEN_DURATION_MINUTES );
+        expirationDate.add( Calendar.MINUTE, 300 );
         String token = generateToken( user, expirationDate.getTime() );
         return new TokenDTO( token, expirationDate.getTime() );
     }
